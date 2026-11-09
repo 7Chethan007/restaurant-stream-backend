@@ -1,0 +1,13 @@
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - KINESIS_ENDPOINT=http://floci:4566
+      - AWS_DEFAULT_REGION=us-east-1
+
+networks:
+  default:
+    name: restaurant-stream-net
+    external: true
